@@ -6,110 +6,73 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --thumb-h: 128px;
+  --accent: #3974CC;
+  --bg: #0d1117;
+  --panel: #111820;
+  --border: rgba(255,255,255,.06);
+}
+
 body {
-  background: #0d1117;
+  background: var(--bg);
   display: flex;
+  flex-direction: column;
   height: 100vh;
   overflow: hidden;
   font-family: "Pretendard", "Malgun Gothic", sans-serif;
   color: #c5d0de;
 }
 
-/* ── Sidebar ── */
-.sidebar {
-  width: 220px;
+/* ── Top bar ── */
+.topbar {
+  height: 36px;
   flex-shrink: 0;
-  background: #111820;
-  border-right: 1px solid rgba(255,255,255,.06);
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
   display: flex;
-  flex-direction: column;
-}
-
-.sidebar-head {
-  padding: 14px 16px 12px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  flex-shrink: 0;
+  align-items: center;
+  padding: 0 14px;
+  gap: 16px;
 }
 
 .back-link {
   font-size: .72rem;
   color: #455060;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 8px;
   transition: color .12s;
 }
-.back-link:hover { color: #3974CC; }
+.back-link:hover { color: var(--accent); }
 
-.sidebar-title {
-  font-size: .68rem;
+.topbar-title {
+  font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: #3974CC;
+  color: var(--accent);
 }
 
-.screen-list {
-  flex: 1;
-  overflow-y: auto;
-  padding: 6px 0 12px;
+.current-label {
+  font-size: .72rem;
+  color: #55677a;
+  margin-left: auto;
 }
-.screen-list::-webkit-scrollbar { width: 3px; }
-.screen-list::-webkit-scrollbar-thumb { background: #202c3a; border-radius: 2px; }
-
-.group-label {
-  padding: 14px 14px 4px;
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #253040;
-}
-
-.screen-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-size: .76rem;
-  color: #6a7a8c;
-  border-left: 2px solid transparent;
-  transition: background .1s, color .1s, border-color .1s;
-  line-height: 1.3;
-}
-.screen-item:hover { background: rgba(57,116,204,.07); color: #c5d0de; }
-.screen-item.active {
-  background: rgba(57,116,204,.13);
-  color: #e4ecf5;
-  border-left-color: #3974CC;
-}
-
-.screen-num {
-  font-size: .6rem;
-  color: #2b3a4a;
-  min-width: 16px;
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-}
-.screen-item.active .screen-num { color: #3974CC; }
 
 /* ── Main viewer ── */
-.main {
+.viewer {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 12px;
+  padding: 10px;
+  min-height: 0;
 }
 
 .hmi-wrap {
   overflow: hidden;
   border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.05);
+  box-shadow: 0 16px 50px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.05);
   flex-shrink: 0;
 }
 
@@ -121,101 +84,172 @@ body {
   transform-origin: top left;
   background: #1D2329;
 }
+
+/* ── Thumbnail strip ── */
+.thumbstrip {
+  height: var(--thumb-h);
+  flex-shrink: 0;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  scroll-behavior: smooth;
+}
+
+.thumbstrip::-webkit-scrollbar { height: 3px; }
+.thumbstrip::-webkit-scrollbar-track { background: transparent; }
+.thumbstrip::-webkit-scrollbar-thumb { background: #202c3a; border-radius: 2px; }
+
+.thumb-item {
+  flex-shrink: 0;
+  width: 160px;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color .15s, transform .12s;
+}
+
+.thumb-item:hover { transform: translateY(-2px); border-color: rgba(57,116,204,.5); }
+.thumb-item.active { border-color: var(--accent); }
+
+.thumb-img {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+  background: #1a2230;
+}
+
+.thumb-placeholder {
+  width: 160px;
+  height: 90px;
+  background: #1a2230;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  color: #384a5c;
+  text-align: center;
+  padding: 8px;
+  line-height: 1.4;
+}
+
+.thumb-label {
+  background: #0f1620;
+  padding: 4px 6px;
+  font-size: .62rem;
+  color: #6a7a8c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.thumb-item.active .thumb-label { color: #c5d0de; }
 </style>
 </head>
 <body>
 
-<aside class="sidebar">
-  <div class="sidebar-head">
-    <a class="back-link" href="index.html">← 목록으로</a>
-    <div class="sidebar-title">HMI Screens</div>
-  </div>
-  <div class="screen-list" id="screenList"></div>
-</aside>
+<div class="topbar">
+  <a class="back-link" href="index.html">← 목록으로</a>
+  <span class="topbar-title">Seojin CNC HMI</span>
+  <span class="current-label" id="currentLabel">INTRO</span>
+</div>
 
-<main class="main">
+<div class="viewer">
   <div class="hmi-wrap" id="hmiWrap">
     <iframe src="publish/html/main(ex).html" id="hmiFrame"></iframe>
   </div>
-</main>
+</div>
+
+<div class="thumbstrip" id="thumbStrip"></div>
 
 <script>
 var SCREENS = [
-  { group: 'Main' },
-  { label: 'INTRO',              file: 'main(ex).html' },
-
-  { group: 'T-MASTER' },
-  { label: 'T-MASTER 1p',        file: 't-master.html' },
-  { label: 'T-MASTER 셀 터치시',  file: 't-master(2).html' },
-  { label: 'T-MASTER NUM 항목',   file: 't-master(3).html' },
-  { label: 'T-MASTER 3-1',       file: 't-master(3_1).html' },
-  { label: 'T-MASTER 3-2',       file: 't-master(3_2).html' },
-
-  { group: 'Control' },
-  { label: 'XYZ',                file: 'xyz.html' },
-  { label: 'Handle',             file: 'handle.html' },
-  { label: 'Popup',              file: 'popup.html' },
-  { label: 'Parameter-MASTER',   file: 'parameter.html' },
-
-  { group: 'Data / File' },
-  { label: 'Data-MASTER',        file: 'data-master.html' },
-  { label: 'Data-Parameter',     file: 'data-parameter.html' },
-  { label: 'File-MASTER',        file: 'file-master.html' },
-  { label: 'File-MASTER Save',   file: 'file-master-save.html' },
-
-  { group: 'I/O' },
-  { label: 'I/O Manager',        file: 'io-manager.html' },
-  { label: 'I/O Name',           file: 'io-name.html' },
-  { label: 'I/O Name — Input',   file: 'io-name-input.html' },
-  { label: 'I/O Name — Output',  file: 'io-name-output.html' },
-
-  { group: 'Settings' },
-  { label: 'Tool-MASTER',        file: 'tool-master.html' },
-  { label: 'Master',             file: 'master.html' },
+  { label: 'INTRO',              file: 'main(ex).html',         thumb: '0.인트로.JPG' },
+  { label: 'T-MASTER 1p',        file: 't-master.html',         thumb: '2.T-MASTER.JPG' },
+  { label: 'T-MASTER 셀 터치',    file: 't-master(2).html',      thumb: '3.T-MASTER.JPG' },
+  { label: 'T-MASTER NUM 항목',   file: 't-master(3).html',      thumb: '4.T-MASTER.JPG' },
+  { label: 'T-MASTER 3-1',       file: 't-master(3_1).html',    thumb: '5.T-MASTER.JPG' },
+  { label: 'T-MASTER 3-2',       file: 't-master(3_2).html',    thumb: null },
+  { label: 'XYZ',                file: 'xyz.html',              thumb: '7.XYz.jpg' },
+  { label: 'Handle',             file: 'handle.html',           thumb: '8.Handle.jpg' },
+  { label: 'Handle — Popup',     file: 'popup.html',            thumb: '12.팝업.jpg' },
+  { label: 'Data-MASTER',        file: 'data-master.html',      thumb: '14.Data-master.jpg' },
+  { label: 'Data-Parameter',     file: 'data-parameter.html',   thumb: null },
+  { label: 'File-MASTER',        file: 'file-master.html',      thumb: '13.File-master.jpg' },
+  { label: 'File-MASTER Save',   file: 'file-master-save.html', thumb: null },
+  { label: 'I/O Manager',        file: 'io-manager.html',       thumb: '11.IO_manager.jpg' },
+  { label: 'I/O Name',           file: 'io-name.html',          thumb: '15.IO-name.jpg' },
+  { label: 'I/O Name — Input',   file: 'io-name-input.html',    thumb: '6.Handle.jpg' },
+  { label: 'I/O Name — Output',  file: 'io-name-output.html',   thumb: '9.Handle.jpg' },
+  { label: 'Parameter-MASTER',   file: 'parameter.html',        thumb: '16.parameter-master.jpg' },
+  { label: 'Tool-MASTER',        file: 'tool-master.html',      thumb: '17.tool-master.jpg' },
+  { label: 'Master',             file: 'master.html',           thumb: null },
 ];
 
 var W = 1920, H = 1080;
-var frame   = document.getElementById('hmiFrame');
-var wrap    = document.getElementById('hmiWrap');
-var list    = document.getElementById('screenList');
-var activeEl = null;
-var idx = 0;
+var THUMB_H = 128;
+var frame      = document.getElementById('hmiFrame');
+var wrap       = document.getElementById('hmiWrap');
+var strip      = document.getElementById('thumbStrip');
+var labelEl    = document.getElementById('currentLabel');
+var activeItem = null;
 
-SCREENS.forEach(function (s) {
-  if (s.group) {
-    var g = document.createElement('div');
-    g.className = 'group-label';
-    g.textContent = s.group;
-    list.appendChild(g);
-    return;
-  }
-  idx++;
-  var n = idx;
+// Build thumbnails
+SCREENS.forEach(function (s, i) {
   var item = document.createElement('div');
-  item.className = 'screen-item';
-  item.innerHTML =
-    '<span class="screen-num">' + String(n).padStart(2, '0') + '</span>' +
-    '<span>' + s.label + '</span>';
+  item.className = 'thumb-item' + (i === 0 ? ' active' : '');
+  if (i === 0) activeItem = item;
+
+  var media;
+  if (s.thumb) {
+    media = document.createElement('img');
+    media.className = 'thumb-img';
+    media.src = '_screenshots/' + s.thumb;
+    media.alt = s.label;
+    media.loading = 'lazy';
+  } else {
+    media = document.createElement('div');
+    media.className = 'thumb-placeholder';
+    media.textContent = s.label;
+  }
+
+  var lbl = document.createElement('div');
+  lbl.className = 'thumb-label';
+  lbl.textContent = s.label;
+
+  item.appendChild(media);
+  item.appendChild(lbl);
+
   item.addEventListener('click', function () {
-    if (activeEl) activeEl.classList.remove('active');
-    activeEl = item;
+    if (activeItem) activeItem.classList.remove('active');
+    activeItem = item;
     item.classList.add('active');
     frame.src = 'publish/html/' + s.file;
+    labelEl.textContent = s.label;
+    item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   });
-  if (n === 1) { item.classList.add('active'); activeEl = item; }
-  list.appendChild(item);
+
+  strip.appendChild(item);
 });
 
+// Scale iframe to fill available space above thumbnail strip
 function fit() {
-  var pad = 24;
-  var sideW = 220;
-  var availW = window.innerWidth  - sideW - pad;
-  var availH = window.innerHeight - pad;
+  var pad = 16;
+  var availW = window.innerWidth  - pad;
+  var availH = window.innerHeight - THUMB_H - 36 - pad; // minus topbar & strip
   var scale  = Math.min(availW / W, availH / H);
   frame.style.transform = 'scale(' + scale + ')';
   wrap.style.width  = Math.round(W * scale) + 'px';
   wrap.style.height = Math.round(H * scale) + 'px';
 }
+
 fit();
 window.addEventListener('resize', fit);
 </script>
