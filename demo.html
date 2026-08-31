@@ -1,257 +1,418 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="utf-8">
-<title>Seojin Tech CNC HMI — Demo</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="utf-8">
+  <title>Seojin Tech CNC HMI — Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-:root {
-  --thumb-h: 128px;
-  --accent: #3974CC;
-  --bg: #0d1117;
-  --panel: #111820;
-  --border: rgba(255,255,255,.06);
-}
+    :root {
+      --thumb-h: 128px;
+      --accent: #3974CC;
+      --bg: #0d1117;
+      --panel: #111820;
+      --border: rgba(255, 255, 255, .06);
+    }
 
-body {
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  font-family: "Pretendard", "Malgun Gothic", sans-serif;
-  color: #c5d0de;
-}
+    body {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Pretendard", "Malgun Gothic", sans-serif;
+      color: #c5d0de;
+    }
 
-/* ── Top bar ── */
-.topbar {
-  height: 36px;
-  flex-shrink: 0;
-  background: var(--panel);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  padding: 0 14px;
-  gap: 16px;
-}
+    /* ── GitHub link ── */
+    .gh-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .10);
+      color: #7a8fa8;
+      font-size: .68rem;
+      letter-spacing: .04em;
+      text-decoration: none;
+      transition: color .15s, background .15s, border-color .15s;
+      flex-shrink: 0;
+    }
 
-.back-link {
-  font-size: .72rem;
-  color: #455060;
-  text-decoration: none;
-  transition: color .12s;
-}
-.back-link:hover { color: var(--accent); }
+    .gh-link:hover {
+      color: #c5d0de;
+      background: rgba(255, 255, 255, .10);
+      border-color: rgba(255, 255, 255, .20);
+    }
 
-.topbar-title {
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
+    .gh-link svg {
+      flex-shrink: 0;
+    }
 
-.current-label {
-  font-size: .72rem;
-  color: #55677a;
-  margin-left: auto;
-}
+    .tablet-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: -40px;
+    }
 
-/* ── Main viewer ── */
-.viewer {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 10px;
-  min-height: 0;
-}
+    /* ── Main viewer ── */
+    .viewer {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px;
+      min-height: 0;
+    }
 
-.hmi-wrap {
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 16px 50px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.05);
-  flex-shrink: 0;
-}
+    /* ── Tablet Frame ── */
+    .tablet-frame {
+      background: linear-gradient(160deg, #242830 0%, #181c22 100%);
+      border-radius: 22px;
+      padding: 24px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, .10),
+        0 0 0 2px rgba(0, 0, 0, .60),
+        0 8px 16px rgba(0, 0, 0, .40),
+        0 24px 64px rgba(0, 0, 0, .60),
+        0 48px 120px rgba(0, 0, 0, .30),
+        inset 0 1px 0 rgba(255, 255, 255, .08),
+        inset 0 -1px 0 rgba(0, 0, 0, .40);
+    }
 
-.hmi-wrap iframe {
-  display: block;
-  width: 1920px;
-  height: 1080px;
-  border: none;
-  transform-origin: top left;
-  background: #1D2329;
-}
+    .tablet-cam {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2b2f3a;
+      border: 1px solid rgba(0, 0, 0, .5);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .03);
+      flex-shrink: 0;
+    }
 
-/* ── Thumbnail strip ── */
-.thumbstrip {
-  height: var(--thumb-h);
-  flex-shrink: 0;
-  background: var(--panel);
-  border-top: 1px solid var(--border);
-  overflow-x: auto;
-  overflow-y: hidden;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 12px;
-  scroll-behavior: smooth;
-}
+    .tablet-screen {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px #000, inset 0 0 0 1px rgba(255, 255, 255, .02);
+      background: #000;
+      line-height: 0;
+    }
 
-.thumbstrip::-webkit-scrollbar { height: 3px; }
-.thumbstrip::-webkit-scrollbar-track { background: transparent; }
-.thumbstrip::-webkit-scrollbar-thumb { background: #202c3a; border-radius: 2px; }
+    .tablet-home {
+      width: 60px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, .08);
+      flex-shrink: 0;
+    }
 
-.thumb-item {
-  flex-shrink: 0;
-  width: 160px;
-  cursor: pointer;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color .15s, transform .12s;
-}
+    .hmi-wrap {
+      overflow: hidden;
+      flex-shrink: 0;
+    }
 
-.thumb-item:hover { transform: translateY(-2px); border-color: rgba(57,116,204,.5); }
-.thumb-item.active { border-color: var(--accent); }
+    .hmi-wrap iframe {
+      display: block;
+      width: 1920px;
+      height: 1080px;
+      border: none;
+      transform-origin: top left;
+      background: #1D2329;
+    }
 
-.thumb-img {
-  width: 160px;
-  height: 90px;
-  object-fit: cover;
-  display: block;
-  background: #1a2230;
-}
+    /* ── Thumbnail strip ── */
+    .strip-area {
+      flex-shrink: 0;
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
 
-.thumb-placeholder {
-  width: 160px;
-  height: 90px;
-  background: #1a2230;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .65rem;
-  color: #384a5c;
-  text-align: center;
-  padding: 8px;
-  line-height: 1.4;
-}
+    .strip-arrow {
+      flex-shrink: 0;
+      width: 36px;
+      height: var(--thumb-h);
+      background: none;
+      border: none;
+      color: #3d4f62;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color .15s, background .15s;
+    }
 
-.thumb-label {
-  background: #0f1620;
-  padding: 4px 6px;
-  font-size: .62rem;
-  color: #6a7a8c;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-}
+    .strip-arrow:hover {
+      color: var(--accent);
+      background: rgba(57, 116, 204, .06);
+    }
 
-.thumb-item.active .thumb-label { color: #c5d0de; }
-</style>
+    .thumbstrip {
+      height: var(--thumb-h);
+      flex: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 4px;
+      scroll-behavior: smooth;
+    }
+
+    .thumbstrip::-webkit-scrollbar {
+      height: 3px;
+    }
+
+    .thumbstrip::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .thumbstrip::-webkit-scrollbar-thumb {
+      background: #202c3a;
+      border-radius: 2px;
+    }
+
+    .thumb-item {
+      flex-shrink: 0;
+      width: 160px;
+      cursor: pointer;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color .15s, transform .12s;
+    }
+
+    .thumb-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(57, 116, 204, .5);
+    }
+
+    .thumb-item.active {
+      border-color: var(--accent);
+    }
+
+    .thumb-img {
+      width: 160px;
+      height: 90px;
+      object-fit: cover;
+      display: block;
+      background: #1a2230;
+    }
+
+    .thumb-placeholder {
+      width: 160px;
+      height: 90px;
+      background: #1a2230;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      color: #384a5c;
+      text-align: center;
+      padding: 8px;
+      line-height: 1.4;
+    }
+
+    .thumb-label {
+      background: #0f1620;
+      padding: 4px 6px;
+      font-size: .62rem;
+      color: #6a7a8c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    .thumb-item.active .thumb-label {
+      color: #c5d0de;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="topbar">
-  <a class="back-link" href="index.html">← 목록으로</a>
-  <span class="topbar-title">Seojin CNC HMI</span>
-  <span class="current-label" id="currentLabel">INTRO</span>
-</div>
+  <span id="currentLabel" style="display:none"></span>
 
-<div class="viewer">
-  <div class="hmi-wrap" id="hmiWrap">
-    <iframe src="publish/html/main(ex).html" id="hmiFrame"></iframe>
+  <div class="viewer">
+    <div class="tablet-wrap">
+      <div class="tablet-frame">
+        <div class="tablet-cam"></div>
+        <div class="tablet-screen">
+          <div class="hmi-wrap" id="hmiWrap">
+            <iframe src="publish/html/main(ex).html" id="hmiFrame"></iframe>
+          </div>
+        </div>
+        <div class="tablet-home"></div>
+      </div>
+      <a class="gh-link" href="https://github.com/seoldi/seojin-hmi" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+          -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+          .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+          -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+          .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+          .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+          0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+        </svg>
+        seoldi/seojin-hmi
+      </a>
+    </div>
   </div>
-</div>
 
-<div class="thumbstrip" id="thumbStrip"></div>
+  <div class="strip-area">
+    <button class="strip-arrow" id="stripPrev">&#8249;</button>
+    <div class="thumbstrip" id="thumbStrip"></div>
+    <button class="strip-arrow" id="stripNext">&#8250;</button>
+  </div>
 
-<script>
-var SCREENS = [
-  { label: 'INTRO',              file: 'main(ex).html',         thumb: '0.인트로.JPG' },
-  { label: 'T-MASTER 1p',        file: 't-master.html',         thumb: '2.T-MASTER.JPG' },
-  { label: 'T-MASTER 셀 터치',    file: 't-master(2).html',      thumb: '3.T-MASTER.JPG' },
-  { label: 'T-MASTER NUM 항목',   file: 't-master(3).html',      thumb: '4.T-MASTER.JPG' },
-  { label: 'T-MASTER 3-1',       file: 't-master(3_1).html',    thumb: '5.T-MASTER.JPG' },
-  { label: 'T-MASTER 3-2',       file: 't-master(3_2).html',    thumb: null },
-  { label: 'XYZ',                file: 'xyz.html',              thumb: '7.XYz.jpg' },
-  { label: 'Handle',             file: 'handle.html',           thumb: '8.Handle.jpg' },
-  { label: 'Handle — Popup',     file: 'popup.html',            thumb: '12.팝업.jpg' },
-  { label: 'Data-MASTER',        file: 'data-master.html',      thumb: '14.Data-master.jpg' },
-  { label: 'Data-Parameter',     file: 'data-parameter.html',   thumb: null },
-  { label: 'File-MASTER',        file: 'file-master.html',      thumb: '13.File-master.jpg' },
-  { label: 'File-MASTER Save',   file: 'file-master-save.html', thumb: null },
-  { label: 'I/O Manager',        file: 'io-manager.html',       thumb: '11.IO_manager.jpg' },
-  { label: 'I/O Name',           file: 'io-name.html',          thumb: '15.IO-name.jpg' },
-  { label: 'I/O Name — Input',   file: 'io-name-input.html',    thumb: '6.Handle.jpg' },
-  { label: 'I/O Name — Output',  file: 'io-name-output.html',   thumb: '9.Handle.jpg' },
-  { label: 'Parameter-MASTER',   file: 'parameter.html',        thumb: '16.parameter-master.jpg' },
-  { label: 'Tool-MASTER',        file: 'tool-master.html',      thumb: '17.tool-master.jpg' },
-  { label: 'Master',             file: 'master.html',           thumb: null },
-];
+  <script>
+    var SCREENS = [
+      { label: 'INTRO', file: 'main(ex).html', thumb: '0.인트로.JPG' },
+      { label: 'T-MASTER 1p', file: 't-master.html', thumb: '2.T-MASTER.JPG' },
+      { label: 'T-MASTER 셀 터치', file: 't-master(2).html', popup: 'feeding', thumb: '3.T-MASTER.JPG' },
+      { label: 'T-MASTER NUM 항목', file: 't-master(3).html', thumb: '4.T-MASTER.JPG' },
+      { label: 'XYZ', file: 'xyz.html', thumb: '7.XYz.jpg' },
+      { label: 'Handle', file: 'handle.html', thumb: '8.Handle.jpg' },
+      { label: 'Handle — Popup', file: 'handle.html', popup: 'delete-confirm', thumb: '12.팝업.jpg' },
+      { label: 'Data-MASTER', file: 'data-master.html', thumb: '14.Data-master.jpg' },
+      { label: 'File-MASTER', file: 'file-master.html', thumb: '13.File-master.jpg' },
+      { label: 'File-MASTER Save', file: 'file-master-save.html', thumb: null },
+      { label: 'I/O Manager', file: 'io-manager.html', thumb: '11.IO_manager.jpg' },
+      { label: 'I/O Name', file: 'io-name.html', thumb: '15.IO-name.jpg' },
+      { label: 'Parameter-MASTER', file: 'parameter.html', thumb: '16.parameter-master.jpg' },
+      { label: 'Tool-MASTER', file: 'tool-master.html', thumb: '17.tool-master.jpg' },
+    ];
 
-var W = 1920, H = 1080;
-var THUMB_H = 128;
-var frame      = document.getElementById('hmiFrame');
-var wrap       = document.getElementById('hmiWrap');
-var strip      = document.getElementById('thumbStrip');
-var labelEl    = document.getElementById('currentLabel');
-var activeItem = null;
+    var W = 1920, H = 1080;
+    var THUMB_H = 144; // 128px strip + 16px bottom padding
+    var frame = document.getElementById('hmiFrame');
+    var wrap = document.getElementById('hmiWrap');
+    var strip = document.getElementById('thumbStrip');
+    var labelEl = document.getElementById('currentLabel');
+    var activeItem = null;
+    var items = [];
 
-// Build thumbnails
-SCREENS.forEach(function (s, i) {
-  var item = document.createElement('div');
-  item.className = 'thumb-item' + (i === 0 ? ' active' : '');
-  if (i === 0) activeItem = item;
+    var savedIdx = parseInt(localStorage.getItem('hmiScreen') || '0');
+    if (savedIdx < 0 || savedIdx >= SCREENS.length) savedIdx = 0;
 
-  var media;
-  if (s.thumb) {
-    media = document.createElement('img');
-    media.className = 'thumb-img';
-    media.src = '_screenshots/' + s.thumb;
-    media.alt = s.label;
-    media.loading = 'lazy';
-  } else {
-    media = document.createElement('div');
-    media.className = 'thumb-placeholder';
-    media.textContent = s.label;
-  }
+    // Build thumbnails
+    SCREENS.forEach(function (s, i) {
+      var item = document.createElement('div');
+      item.className = 'thumb-item' + (i === savedIdx ? ' active' : '');
+      if (i === savedIdx) activeItem = item;
 
-  var lbl = document.createElement('div');
-  lbl.className = 'thumb-label';
-  lbl.textContent = s.label;
+      var media;
+      if (s.thumb) {
+        media = document.createElement('img');
+        media.className = 'thumb-img';
+        media.src = '_screenshots/' + s.thumb;
+        media.alt = s.label;
+        media.loading = 'lazy';
+      } else {
+        media = document.createElement('div');
+        media.className = 'thumb-placeholder';
+        media.textContent = s.label;
+      }
 
-  item.appendChild(media);
-  item.appendChild(lbl);
+      var lbl = document.createElement('div');
+      lbl.className = 'thumb-label';
+      lbl.textContent = s.label;
 
-  item.addEventListener('click', function () {
-    if (activeItem) activeItem.classList.remove('active');
-    activeItem = item;
-    item.classList.add('active');
-    frame.src = 'publish/html/' + s.file;
-    labelEl.textContent = s.label;
-    item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  });
+      item.appendChild(media);
+      item.appendChild(lbl);
 
-  strip.appendChild(item);
-});
+      item.addEventListener('click', function () {
+        if (activeItem) activeItem.classList.remove('active');
+        activeItem = item;
+        item.classList.add('active');
+        if (s.popup) {
+          frame.addEventListener('load', function sendPopup() {
+            frame.removeEventListener('load', sendPopup);
+            frame.contentWindow.postMessage({ openPopup: s.popup }, '*');
+          });
+        }
+        frame.src = 'publish/html/' + s.file;
+        labelEl.textContent = s.label;
+        localStorage.setItem('hmiScreen', i);
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
 
-// Scale iframe to fill available space above thumbnail strip
-function fit() {
-  var pad = 16;
-  var availW = window.innerWidth  - pad;
-  var availH = window.innerHeight - THUMB_H - 36 - pad; // minus topbar & strip
-  var scale  = Math.min(availW / W, availH / H);
-  frame.style.transform = 'scale(' + scale + ')';
-  wrap.style.width  = Math.round(W * scale) + 'px';
-  wrap.style.height = Math.round(H * scale) + 'px';
-}
+      items.push(item);
+      strip.appendChild(item);
+    });
 
-fit();
-window.addEventListener('resize', fit);
-</script>
+    // Restore saved screen
+    if (savedIdx > 0) {
+      var s0 = SCREENS[savedIdx];
+      if (s0.popup) {
+        frame.addEventListener('load', function sendPopup() {
+          frame.removeEventListener('load', sendPopup);
+          frame.contentWindow.postMessage({ openPopup: s0.popup }, '*');
+        });
+      }
+      frame.src = 'publish/html/' + s0.file;
+      labelEl.textContent = s0.label;
+      setTimeout(function () {
+        items[savedIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }, 100);
+    }
+
+    // Arrow navigation
+    var SCROLL_STEP = 540; // ~3 thumbnails
+    document.getElementById('stripPrev').addEventListener('click', function () {
+      strip.scrollBy({ left: -SCROLL_STEP, behavior: 'smooth' });
+    });
+    document.getElementById('stripNext').addEventListener('click', function () {
+      strip.scrollBy({ left: SCROLL_STEP, behavior: 'smooth' });
+    });
+
+    // Keyboard left/right: navigate screens
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var cur = items.indexOf(activeItem);
+      var next = e.key === 'ArrowLeft' ? cur - 1 : cur + 1;
+      if (next >= 0 && next < items.length) items[next].click();
+    });
+
+    // Scale iframe to fill available space above thumbnail strip
+    // BEZEL_W/H: tablet-frame padding + camera dot + home bar + gaps
+    var BEZEL_W = 40;
+    var BEZEL_H = 106; // 70px tablet chrome + 10px gap + 26px gh-link
+
+    function fit() {
+      var pad = 20;
+      var availW = window.innerWidth - pad - BEZEL_W;
+      var availH = window.innerHeight - THUMB_H - pad - BEZEL_H;
+      var scale = Math.min(availW / W, availH / H) * 0.82;
+      frame.style.transform = 'scale(' + scale + ')';
+      wrap.style.width = Math.round(W * scale) + 'px';
+      wrap.style.height = Math.round(H * scale) + 'px';
+    }
+
+    fit();
+    window.addEventListener('resize', fit);
+  </script>
 </body>
+
 </html>

@@ -678,7 +678,7 @@ table{
 
 /* Chrome, Safari용 스크롤 바 */
 ::-webkit-scrollbar{
-    width: 40px;
+    width: 10px;
     }
 ::-webkit-scrollbar-track {
   background-color:#33373A;
@@ -892,7 +892,7 @@ footer .top-group{width: 1080px;}
 
 footer .top-group li {
   text-align: center;
-  height: 35px;
+  height: 44px;
   width: 92px;
 }
 
@@ -978,13 +978,13 @@ footer .right-group {margin-left: auto;}
   width: 755px
 }
 
-footer.bigBt {
+/* footer.bigBt {
   padding: 7px 30px;
-}
+} */
 
-footer.bigBt .left-li li, .f-right-wrap li {
+/* footer.bigBt .left-li li, .f-right-wrap li {
   height: 64px;
-}
+} */
 
 
 /*** 하단 버튼 터치시 색상변경 ******************/

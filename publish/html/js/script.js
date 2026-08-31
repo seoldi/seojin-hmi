@@ -1,6 +1,25 @@
+var popupToOpen = null;
+
+function openPopupIfReady() {
+    if (!popupToOpen) return;
+    var $el = $('#' + popupToOpen);
+    if (!$el.length) return;
+    popupToOpen = null;
+    $el.modal();
+}
+
+window.addEventListener('message', function(e) {
+    if (e.data && e.data.openPopup) {
+        popupToOpen = e.data.openPopup;
+        openPopupIfReady();
+    }
+});
+
 $(document).ready(function(){
 
-    $("#pop").load("popup.html")
+    $("#pop").load("popup.html", function() {
+        openPopupIfReady();
+    })
    /* id 지정을 통해서도 가능합니다.
     $("#header").load("header.html #navbar")
     */

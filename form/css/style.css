@@ -798,7 +798,7 @@ table{
 
 /* Chrome, Safari용 스크롤 바 */
 ::-webkit-scrollbar{
-    width: 40px;
+    width: 10px;
     }
 ::-webkit-scrollbar-track {
   background-color:#33373A;
