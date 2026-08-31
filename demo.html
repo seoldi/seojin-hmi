@@ -36,7 +36,7 @@
 <body>
 <a class="back-btn" href="index.html">← 목록으로</a>
 <div class="hmi-wrap" id="hmiWrap">
-  <iframe src="publish/main.html" id="hmiFrame"></iframe>
+  <iframe src="publish/html/main.html" id="hmiFrame"></iframe>
 </div>
 <script>
 (function () {
@@ -45,7 +45,7 @@
   var frame = document.getElementById('hmiFrame');
   var params = new URLSearchParams(location.search);
   if (params.get('src')) {
-    frame.src = 'publish/' + params.get('src') + '.html';
+    frame.src = 'publish/html/' + params.get('src') + '.html';
   }
   function fit() {
     var pad = 24;
