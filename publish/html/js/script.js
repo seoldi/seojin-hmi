@@ -15,6 +15,13 @@ window.addEventListener('message', function(e) {
     }
 });
 
+// iframe 내 화살표 키 → 부모(demo.html)로 전달
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        window.parent.postMessage({ arrowKey: e.key }, '*');
+    }
+});
+
 $(document).ready(function(){
 
     $("#pop").load("popup.html", function() {

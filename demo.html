@@ -45,6 +45,7 @@
       text-decoration: none;
       transition: color .15s, background .15s, border-color .15s;
       flex-shrink: 0;
+      margin-bottom: -50px;
     }
 
     .gh-link:hover {
@@ -59,10 +60,40 @@
 
     .tablet-wrap {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tablet-col {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
-      margin-bottom: -40px;
+      gap: 40px;
+    }
+
+    .slide-arrow {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .10);
+      color: #5a7080;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color .15s, background .15s, border-color .15s;
+      align-self: center;
+    }
+
+    .slide-arrow:hover {
+      color: #c5d0de;
+      background: rgba(255, 255, 255, .13);
+      border-color: rgba(255, 255, 255, .20);
     }
 
     /* ── Main viewer ── */
@@ -198,11 +229,10 @@
       border-radius: 5px;
       overflow: hidden;
       border: 2px solid transparent;
-      transition: border-color .15s, transform .12s;
+      transition: border-color .15s;
     }
 
     .thumb-item:hover {
-      transform: translateY(-2px);
       border-color: rgba(57, 116, 204, .5);
     }
 
@@ -255,18 +285,20 @@
 
   <div class="viewer">
     <div class="tablet-wrap">
-      <div class="tablet-frame">
-        <div class="tablet-cam"></div>
-        <div class="tablet-screen">
-          <div class="hmi-wrap" id="hmiWrap">
-            <iframe src="publish/html/main(ex).html" id="hmiFrame"></iframe>
+      <button class="slide-arrow" id="slidePrev">&#8249;</button>
+      <div class="tablet-col">
+        <div class="tablet-frame">
+          <div class="tablet-cam"></div>
+          <div class="tablet-screen">
+            <div class="hmi-wrap" id="hmiWrap">
+              <iframe src="publish/html/main(ex).html" id="hmiFrame"></iframe>
+            </div>
           </div>
+          <div class="tablet-home"></div>
         </div>
-        <div class="tablet-home"></div>
-      </div>
-      <a class="gh-link" href="https://github.com/seoldi/seojin-hmi" target="_blank" rel="noopener">
-        <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+        <a class="gh-link" href="https://github.com/seoldi/seojin-hmi" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
           0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
           -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
           .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
@@ -274,9 +306,11 @@
           .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
           .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
           0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-        </svg>
-        seoldi/seojin-hmi
-      </a>
+          </svg>
+          seoldi/seojin-hmi
+        </a>
+      </div>
+      <button class="slide-arrow" id="slideNext">&#8250;</button>
     </div>
   </div>
 
@@ -355,12 +389,17 @@
         frame.src = 'publish/html/' + s.file;
         labelEl.textContent = s.label;
         localStorage.setItem('hmiScreen', i);
-        item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        scrollToCenter(item);
       });
 
       items.push(item);
       strip.appendChild(item);
     });
+
+    function scrollToCenter(item) {
+      var left = item.offsetLeft - (strip.clientWidth / 2) + (item.offsetWidth / 2);
+      strip.scrollTo({ left: left, behavior: 'smooth' });
+    }
 
     // Restore saved screen
     if (savedIdx > 0) {
@@ -373,9 +412,7 @@
       }
       frame.src = 'publish/html/' + s0.file;
       labelEl.textContent = s0.label;
-      setTimeout(function () {
-        items[savedIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }, 100);
+      setTimeout(function () { scrollToCenter(items[savedIdx]); }, 100);
     }
 
     // Arrow navigation
@@ -387,7 +424,23 @@
       strip.scrollBy({ left: SCROLL_STEP, behavior: 'smooth' });
     });
 
-    // Keyboard left/right: navigate screens
+    // Slide arrows: navigate screens
+    function navigateScreen(dir) {
+      var cur = items.indexOf(activeItem);
+      var next = cur + dir;
+      if (next >= 0 && next < items.length) items[next].click();
+    }
+    document.getElementById('slidePrev').addEventListener('click', function () { navigateScreen(-1); });
+    document.getElementById('slideNext').addEventListener('click', function () { navigateScreen(1); });
+
+    // iframe 내 arrow key → parent postMessage 수신
+    window.addEventListener('message', function (e) {
+      if (e.data && e.data.arrowKey) {
+        navigateScreen(e.data.arrowKey === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+
+    // Keyboard left/right: navigate screens (demo.html에 포커스 있을 때)
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       var cur = items.indexOf(activeItem);
@@ -397,7 +450,7 @@
 
     // Scale iframe to fill available space above thumbnail strip
     // BEZEL_W/H: tablet-frame padding + camera dot + home bar + gaps
-    var BEZEL_W = 40;
+    var BEZEL_W = 136; // 40px tablet padding + 2*(36px arrow + 12px gap)
     var BEZEL_H = 106; // 70px tablet chrome + 10px gap + 26px gh-link
 
     function fit() {
