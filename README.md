@@ -1,7 +1,6 @@
 # ⚙️ Seojin Tech CNC HMI
 
-<a href="https://seoldi.github.io/seojin-hmi/demo.html" target="_blank">▶ 메인 화면 데모</a> &nbsp;|&nbsp;
-<a href="https://seoldi.github.io/seojin-hmi/demo.html?src=master" target="_blank">⚙️ 마스터 설정 데모</a> &nbsp;|&nbsp;
+<a href="https://seoldi.github.io/seojin-hmi/demo.html" target="_blank">▶ 라이브 데모 (21 screens)</a> &nbsp;|&nbsp;
 <a href="https://youtu.be/PuTYs1BSlCA" target="_blank">🎬 실기계 가동 영상</a>
 
 ---
