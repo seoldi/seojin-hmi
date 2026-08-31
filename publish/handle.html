@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#00ADEF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>서진테크</title>
+
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./fonts/poppins/poppins.css" rel="stylesheet">
+    <link href="./fonts/NotoSansKr/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jquery.modal.min.css" />
+    <link href="./css/style.css" rel="stylesheet">
+
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="./js/jquery.modal.min.js"></script>
+
+
+  </head>
+  <body>
+
+    <div id="pop"></div> <!--pop.html 인클르드 -->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+      <div class="logo">
+        <img src="./source/logo.svg" alt="">
+      </div>
+      <h2 class="title">Handle</h2>
+      <div class="ico-clock">2000-12-20  12:00 AM</div>
+      <div class="ico-version">VER 1.00</div>
+      <div class="center"></div>
+      <div class="ico-num">SerialNum : BN58736-S3000</div>
+      <div class="ico-file">File Name : 1001</div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <main>
+
+      <side>
+        <div class="box green round">
+          <ul class="greenTl">
+            <li class="active">
+              <div class="tl">Finger</div>
+              <div class="num" id="fingerBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Rotation</div>
+              <div class="num" id="rotationBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Feeding</div>
+              <div class="num" id="feedingBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Bending</div>
+              <div class="num" id="secretNumBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Head L/R</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Head U/D</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Mandrel</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">S</div>
+              <div class="num">-0.01</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box pupple round">
+          <ul class="blueTl">
+            <li class="active">
+              <div class="tl">Set Count</div>
+              <div class="num">3000</div>
+            </li>
+            <li>
+              <div class="tl">Work Count</div>
+              <div class="num">159</div>
+            </li>
+            <li>
+              <div class="tl">Speed</div>
+              <div class="num">50.0</div>
+            </li>
+            <li>
+              <div class="tl">Time</div>
+              <div class="num">300s</div>
+            </li>
+            <li>
+              <div class="tl">Work Line</div>
+              <div class="num">P15</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box list">
+          <ul>
+            <li>
+              <div class="tl">Input 1</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Input 2</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Input 3</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <hr>
+            <li>
+              <div class="tl">Output</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Output</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+          </ul>
+        </div>
+      </side>
+
+      <section>
+        <div class="box">
+          <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <thead>
+                <tr>
+                  <th>Num</th>
+                  <th>Bending<br>Point</th>
+                  <th>Speed,<br>Time</th>
+                  <th>Loop, Break,<br>Interlock</th>
+                  <th>Feed</th>
+                  <th>Head<br>L/R</th>
+                  <th>Head<br>U/D</th>
+                  <th>Rotation</th>
+                  <th>Arm</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>I/O</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td class="key active">90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> <!-- end box --->
+
+
+        <div class="box">
+          <table class="cad-table">
+            <tr class="cad-head">
+              <th rowspan="2" colspan="2"><img src="../source/line.svg"></th>
+              <th class="combine">피딩+밴딩호</th>
+              <th class="pidding">피딩</th>
+              <th class="rotation">추천회전</th>
+              <th class="banding">밴딩</th>
+              <th class="pound3" colspan="3">3#(회전)</th>
+            </tr>
+            <tr class="cad-pic">
+              <td class="combine"><img src="../source/ban01.jpg"></td>
+              <td class="pidding"><img src="../source/ban02.jpg"></td>
+              <td class="rotation"><img src="../source/ban03.jpg"></td>
+              <td class="banding"><img src="../source/ban04.jpg"></td>
+              <td class="pound3" colspan="3"><img src="../source/ban05.jpg"></td>
+            </tr>
+            <tr class="cad-list">
+              <td class="ltl" colspan="2">적용</td>
+              <td class="combine"><span class="circle-mark">S</span></td>
+              <td class="pidding"><span class="circle-mark">M</span></td>
+              <td class="rotation">
+                <span class="circle-mark">M</span>
+                <span class="circle-mark">S</span>
+              </td>
+              <td class="banding">
+                <span class="circle-mark">M</span>
+                <span class="circle-mark">S</span>
+              </td>
+              <td class="pound3" colspan="3">참고</td>
+            </tr>
+            <tr class="cad-list">
+              <td class="ltl">NO</td>
+              <td class="ltl">P</td>
+              <td class="combine"><b>Ⓡ</b> + a°</td>
+              <td class="pidding"><b>Ⓡ</b></td>
+              <td class="rotation"><b>Ⓡ</b></td>
+              <td class="banding"><b>Ⓡ</b> + a°</td>
+              <td class="pound3">CCW-</td>
+              <td class="pound3">CW</td>
+              <td class="pound3">CW+180</td>
+            </tr>
+            <tr class="cad-list">
+              <td class="ltl">4</td>
+              <td class="ltl">P4</td>
+              <td class="combine">48.90</td>
+              <td class="pidding">24.6</td>
+              <td class="rotation">64.8</td>
+              <td class="banding">92.8</td>
+              <td class="pound3">-115.2</td>
+              <td class="pound3">+64.8</td>
+              <td class="pound3">224.8</td>
+            </tr>
+          </table>
+
+          <div class="cad-bt-wrap">
+            <ul class="brown-bt">
+              <li>Feed</li>
+              <li>Head L R</li>
+              <li>Head U D</li>
+              <li>Rotation</li>
+              <li>Arm</li>
+              <li>M</li>
+              <li>S</li>
+            </ul>
+            <ul class="mpg-wrap">
+              <li class="tl">MPG</li>
+              <li>x 10</li>
+              <li>x 1</li>
+              <li>x 0.1</li>
+              <li>x 0.01</li>
+            </ul>
+          </div>
+
+        </div> <!-- end box --->
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="f-left-wrap">
+        <ul class="top-group">
+          <li class="active">핑거1</li>
+          <li>핑거2</li>
+          <li>가이드1</li>
+          <li>가이드2</li>
+          <li>가이드3</li>
+          <li>스토퍼</li>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
+        </ul>
+        <ul class="left-group">
+          <li>삭제</li>
+          <li>취소</li>
+          <li>확인</li>
+        </ul>
+
+        <ul class="right-group">
+          <li>+F</li>
+          <li>+S</li>
+          <li id="completeBtn">+완료</li>
+        </ul>
+      </div>
+
+      <div class="f-right-wrap">
+        <ul >
+          <li>핸들동작</li>
+          <li>스텝</li>
+          <li>한계동작</li>
+          <li>연속동작</li>
+          <li>정지</li>
+          <li>원점</li>
+          <li>동시회전</li>
+          <li>-</li>
+          <li>상태</li>
+          <li>-</li>
+          <li>작업취소</li>
+          <li>수동동작</li>
+        </ul>
+      </div>
+
+      <div class="bt-working">Working<br>Mode</div>
+    </footer>
+
+  </body>
+</html>

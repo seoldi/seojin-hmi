@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--    <meta name="viewport" content="width=device-width, shrink-to-fit=no, maximum-scale=0.87">-->
+<!--    <meta name="viewport" content="width=device-width, shrink-to-fit=no, maximum-scale=0.79">-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#00ADEF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>서진테크</title>
+
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../fonts/poppins/poppins.css" rel="stylesheet">
+    <link href="../fonts/NotoSansKr/fonts.css" rel="stylesheet">
+    <link href="../fonts/Antonio/style.css" rel="stylesheet">
+    <link href="../css/jquery.modal.min.css"  rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- 필수 시작-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/jquery.jscssfile.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="../../js/jquery.modal.min.js"></script>
+    <!-- 영수 jQuery js -->
+    <script src="../marujs/WebApp.func.js"></script>
+    <script src="../marujs/WebApp.js"></script>
+    <!-- 필수 종료-->
+
+    <!-- 홈페이지별 js 시작 -->
+    <script src="../marujs/MaruScript.js"></script>
+    <script src="../marujs/WebApp.site.js"></script>
+    <!--    <script src="../layout/layout.js"></script>-->
+    <!-- 홈페이지별 js 종료 -->
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/script.js"></script>
+    <!--    <script src="../../js/jquery.easy-pie-chart.js"></script>-->
+    <script src="../../js/jquery.easy-pie-chart.min.js"></script>
+
+</head>
+
+<body>
+<div data-role="page" id="page-main" data-page="main" class="wrap SYS-context" style="">
+<!--    <div id="mydlg"></div> &lt;!&ndash;pop.html 인클르드 &ndash;&gt;-->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+        <div class="logo">
+            <img src="../source/logo.svg" alt=""><span id="SYS-BTN-LOGO"></span>
+        </div>
+        <h2 class="title">T-master</h2>
+        <div class="SYS-TXT-MA_TIMER ico-clock">2021-06-28 10:41 AM</div>
+        <div class="ico-version">VER 1.00</div>
+        <div class="center"></div>
+        <div class="ico-num"><span>Part Name : </span> <span class="SYS-TXT-MA_SERIAL">X-1420711-1</span></div>
+        <div class="ico-file"><span>Serial Num : </span> <span class="SYS-TXT-MA_FNUMBER">S0008</span></div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <div data-role="body" id="main-body" class="SYS-context">
+        <div data-role="content" id="main_one" data-loc="main">
+            <main>
+                <side>
+                    <div class="box green round">
+                        <ul class="greenTl">
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">Feed</div>
+                                <div class="SYS-TXT-FEED num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">Head L/R</div>
+                                <div class="SYS-TXT-LRHEAD num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">Head U/D</div>
+                                <div class="SYS-TXT-UDHEAD num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">Rotation</div>
+                                <div class="SYS-TXT-ROTATION num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">Arm</div>
+                                <div class="SYS-TXT-FINGER num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">M Axis</div>
+                                <div class="SYS-TXT-MAINROL num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">S Axis</div>
+                                <div class="SYS-TXT-SUBROL num">-0.01</div>
+                            </li>
+                            <li>
+                                <div class="SYS-BTN-POSITION tl">-</div>
+                                <div class="SYS-TXT-TEST num">-</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="box pupple round">
+                        <ul class="blueTl">
+                            <li>
+                                <div class="tl">Set Count</div>
+                                <div class="SYS-TXT-MA_CSET num">9,999,999</div>
+                            </li>
+                            <li>
+                                <div class="tl">Work Count</div>
+                                <div class="SYS-TXT-MA_CCOUNT num">326</div>
+                            </li>
+                            <li>
+                                <div class="tl">Speed</div>
+                                <div class="num"><span class="SYS-TXT-SPEED">100</span><span>%</span></div>
+                            </li>
+                            <li>
+                                <div class="tl">Cycle Time</div>
+                                <div class="num"><span class="SYS-TXT-MA_RTIME"> </span><span>s</span></div>
+                            </li>
+                            <li>
+                                <div class="tl">Work Line</div>
+                                <div class="SYS-TXT-D_WORKLINE num">-</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="box list">
+                        <ul>
+                            <li>
+                                <div class="tl">Input 1</div>
+                                <div class="SYS-TXT-MA_INBIT1 num">0000 0000 0000 0000</div>
+                            </li>
+                            <li>
+                                <div class="tl">Input 2</div>
+                                <div class="SYS-TXT-MA_INBIT2 num">0000 0000 0000 0000</div>
+                            </li>
+                            <li>
+                                <div class="tl">Input 3</div>
+                                <div class="SYS-TXT-MA_INBIT3 num">0000 0000 0000 0000</div>
+                            </li>
+                            <li>
+                                <div class="tl">Input 4</div>
+                                <div class="SYS-TXT-MA_INBIT4 num">0000 0000 0000 0000</div>
+                            </li>
+                            <hr>
+                            <li>
+                                <div class="tl">Output 1</div>
+                                <div class="SYS-TXT-MA_OUTBIT1 num">0000 0000 0000 0000</div>
+                            </li>
+                            <li>
+                                <div class="tl">Output 2</div>
+                                <div class="SYS-TXT-MA_OUTBIT2 num">0000 0000 0000 0000</div>
+                            </li>
+                        </ul>
+                    </div>
+                </side>
+
+                <section>
+                    <div class="box master-box box-full-height">
+                        <!--2022-09-22 sliderBar 추가-->
+                        <div class="slider">
+                            <div class="buttons">
+                                <span class="fa fa-plus"></span>
+                                <div class="drag-line">
+                                    <div class="line"></div>
+                                    <div class="draggable-button"></div>
+                                </div>
+                                <div class="draggable-buton"></div>
+                                <span class="fa fa-minus"></span>
+                            </div>
+                        </div>
+                        <div class="tbl-header">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                <tr>
+                                    <th>Num</th>
+                                    <th>Bending<br>Point</th>
+                                    <th>Speed,<br>Time</th>
+                                    <th>Break</th>
+                                    <th>Feed</th>
+                                    <th>Head L/R</th>
+                                    <th>Head U/D</th>
+                                    <th>Rotation</th>
+                                    <th>Arm</th>
+                                    <th>M Axis</th>
+                                    <th>S Axis</th>
+                                    <th>I/O</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="SYS-BLOCK-TABLE" class="tbl-content">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_3" id="TD-00_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_4" id="TD-00_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_5" id="TD-00_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_6" id="TD-00_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_7" id="TD-00_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_8" id="TD-00_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_9" id="TD-00_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_10" id="TD-00_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_11" id="TD-00_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_0" id="TD-01_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_1" id="TD-01_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_2" id="TD-01_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_3" id="TD-01_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_4" id="TD-01_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_5" id="TD-01_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_6" id="TD-01_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_7" id="TD-01_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_8" id="TD-01_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_9" id="TD-01_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_10" id="TD-01_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-01_11" id="TD-01_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_0" id="TD-02_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_1" id="TD-02_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_2" id="TD-02_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_3" id="TD-02_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_4" id="TD-02_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_5" id="TD-02_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_6" id="TD-02_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_7" id="TD-02_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_8" id="TD-02_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_9" id="TD-02_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_10" id="TD-02_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-02_11" id="TD-02_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_0" id="TD-03_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_1" id="TD-03_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_2" id="TD-03_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_3" id="TD-03_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_4" id="TD-03_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_5" id="TD-03_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_6" id="TD-03_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_7" id="TD-03_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_8" id="TD-03_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_9" id="TD-03_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_10" id="TD-03_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-03_11" id="TD-03_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_0" id="TD-04_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_1" id="TD-04_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_2" id="TD-04_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_3" id="TD-04_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_4" id="TD-04_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_5" id="TD-04_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_6" id="TD-04_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_7" id="TD-04_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_8" id="TD-04_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_9" id="TD-04_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_10" id="TD-04_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-04_11" id="TD-04_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_0" id="TD-05_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_1" id="TD-05_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_2" id="TD-05_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_3" id="TD-05_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_4" id="TD-05_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_5" id="TD-05_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_6" id="TD-05_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_7" id="TD-05_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_8" id="TD-05_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_9" id="TD-05_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_10" id="TD-05_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-05_11" id="TD-05_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_0" id="TD-06_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_1" id="TD-06_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_2" id="TD-06_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_3" id="TD-06_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_4" id="TD-06_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_5" id="TD-06_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_6" id="TD-06_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_7" id="TD-06_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_8" id="TD-06_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_9" id="TD-06_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_10" id="TD-06_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-06_11" id="TD-06_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_0" id="TD-07_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_1" id="TD-07_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_2" id="TD-07_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_3" id="TD-07_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_4" id="TD-07_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_5" id="TD-07_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_6" id="TD-07_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_7" id="TD-07_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_8" id="TD-07_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_9" id="TD-07_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_10" id="TD-07_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-07_11" id="TD-07_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_0" id="TD-08_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_1" id="TD-08_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_2" id="TD-08_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_3" id="TD-08_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_4" id="TD-08_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_5" id="TD-08_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_6" id="TD-08_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_7" id="TD-08_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_8" id="TD-08_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_9" id="TD-08_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_10" id="TD-08_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-08_11" id="TD-08_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_0" id="TD-09_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_1" id="TD-09_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_2" id="TD-09_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_3" id="TD-09_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_4" id="TD-09_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_5" id="TD-09_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_6" id="TD-09_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_7" id="TD-09_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_8" id="TD-09_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_9" id="TD-09_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_10" id="TD-09_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-09_11" id="TD-09_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_0" id="TD-10_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_1" id="TD-10_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_2" id="TD-10_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_3" id="TD-10_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_4" id="TD-10_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_5" id="TD-10_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_6" id="TD-10_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_7" id="TD-10_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_8" id="TD-10_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_9" id="TD-10_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_10" id="TD-10_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-10_11" id="TD-10_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_0" id="TD-11_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_1" id="TD-11_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_2" id="TD-11_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_3" id="TD-11_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_4" id="TD-11_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_5" id="TD-11_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_6" id="TD-11_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_7" id="TD-11_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_8" id="TD-11_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_9" id="TD-11_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_10" id="TD-11_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-11_11" id="TD-11_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_0" id="TD-12_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_1" id="TD-12_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_2" id="TD-12_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_3" id="TD-12_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_4" id="TD-12_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_5" id="TD-12_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_6" id="TD-12_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_7" id="TD-12_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_8" id="TD-12_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_9" id="TD-12_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_10" id="TD-12_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-12_11" id="TD-12_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_0" id="TD-13_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_1" id="TD-13_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_2" id="TD-13_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_3" id="TD-13_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_4" id="TD-13_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_5" id="TD-13_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_6" id="TD-13_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_7" id="TD-13_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_8" id="TD-13_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_9" id="TD-13_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_10" id="TD-13_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-13_11" id="TD-13_11" data-value=""></td>
+                                </tr><tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_0" id="TD-14_0" data-value="1">1</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_1" id="TD-14_1" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_2" id="TD-14_2" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_3" id="TD-14_3" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_4" id="TD-14_4" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_5" id="TD-14_5" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_6" id="TD-14_6" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_7" id="TD-14_7" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_8" id="TD-14_8" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_9" id="TD-14_9" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_10" id="TD-14_10" data-value=""></td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-14_11" id="TD-14_11" data-value=""></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> <!-- end box --->
+
+                </section>
+
+            </main>
+
+            <footer class="bigBt">
+                <div class="f-left-wrap type2">
+                    <ul class="left-li">
+                        <li id="SYS-BTN-MASEL_0" class="SYS-TXT-MASEL_0 SYS-toggle deactive">FINGER1</li>
+                        <li id="SYS-BTN-MASEL_1" class="SYS-TXT-MASEL_1 SYS-toggle deactive">FINGER2</li>
+                        <li id="SYS-BTN-MASEL_2" class="SYS-TXT-MASEL_2 SYS-toggle deactive">GUIDE1</li>
+                        <li id="SYS-BTN-MASEL_3" class="SYS-TXT-MASEL_3 SYS-toggle deactive">GUIDE2</li>
+                        <li id="SYS-BTN-MASEL_4" class="SYS-TXT-MASEL_4 SYS-toggle deactive">GUIDE3</li>
+                        <li id="SYS-BTN-MASEL_5" class="SYS-TXT-MASEL_5 SYS-toggle deactive">G<br>STOPPER</li>
+                        <li id="SYS-BTN-MASEL_6" class="SYS-TXT-MASEL_6 SYS-toggle deactive">H<br>STOPPER</li>
+                        <li id="SYS-BTN-MASEL_7" class="SYS-TXT-MASEL_7">C-GUIDE</li>
+                        <li id="SYS-BTN-MASEL_8" class="SYS-TXT-MASEL_8">Program</li>
+                        <li id="SYS-BTN-MASEL_10" class="SYS-TXT-MASEL_10 SYS-toggle deactive">H<br>SupplyCYL</li>
+                        <li id="SYS-BTN-MASEL_11" class="SYS-TXT-MASEL_11 SYS-toggle deactive">OneCycle<br>LAMP</li>
+                        <li id="SYS-BTN-MASEL_12" class="SYS-TXT-MASEL_12 SYS-toggle deactive">AUTO<br>LAMP</li>
+                        <li id="SYS-BTN-MASEL_13" class="SYS-TXT-MASEL_13 SYS-toggle deactive">PAUSE<br>LAMP</li>
+                        <li id="SYS-BTN-MASEL_14" class="SYS-TXT-MASEL_14 SYS-toggle deactive">T-Lamp<br>(RED)</li>
+                        <li id="SYS-BTN-MASEL_15" class="SYS-TXT-MASEL_15 SYS-toggle deactive">T-Lamp<br>(Yellow)</li>
+                        <li id="SYS-BTN-MASEL_16" class="SYS-TXT-MASEL_16 SYS-toggle deactive">T-Lamp<br>(Green)</li>
+                        <li id="SYS-BTN-MASEL_17" class="SYS-TXT-MASEL_17 SYS-toggle deactive">Buzzer</li>
+                        <li id="SYS-BTN-MASEL_18" class="SYS-TXT-MASEL_18">Next</li>
+                    </ul>
+                </div>
+
+                <div class="f-right-wrap type2">
+                    <ul>
+                        <li id="SYS-BTN-TM_0" class="SYS-TXT-TM_0 GROUP-MAXIS_1 SYS-toggle deactive">Feed</li>
+                        <li id="SYS-BTN-TM_1" class="SYS-TXT-TM_1 GROUP-MAXIS_2 SYS-toggle deactive">Head L/R</li>
+                        <li id="SYS-BTN-TM_2" class="SYS-TXT-TM_2 GROUP-MAXIS_3 SYS-toggle deactive">Head U/D</li>
+                        <li id="SYS-BTN-TM_3" class="SYS-TXT-TM_3 GROUP-MAXIS_4 SYS-toggle deactive">Rotate</li>
+                        <li id="SYS-BTN-TM_4" class="SYS-TXT-TM_4 GROUP-MAXIS_5 SYS-toggle deactive">Arm</li>
+                        <li id="SYS-BTN-TM_5" class="SYS-TXT-TM_5 GROUP-MAXIS_6 SYS-toggle deactive">M Axis</li>
+                        <li id="SYS-BTN-TM_6" class="SYS-TXT-TM_6 GROUP-MAXIS_7 SYS-toggle deactive">S Axis</li>
+                        <li id="SYS-BTN-TM_7" class="SYS-TXT-TM_7 SYS-toggle deactive">x 0.01<br>Move</li>
+                        <li id="SYS-BTN-TM_8" class="SYS-TXT-TM_8 SYS-toggle deactive">x 0.1<br>Move</li>
+                        <li id="SYS-BTN-TM_9" class="SYS-TXT-TM_9 SYS-toggle active">Nomal<br>Move</li>
+                        <li id="SYS-BTN-TM_10" class="SYS-TXT-TM_10 SYS-toggle deactive">Edit</li>
+                        <li id="SYS-BTN-TM_11" class="SYS-TXT-TM_11 SYS-toggle deactive">MDI</li>
+                        <li id="SYS-BTN-TM_12" class="SYS-TXT-TM_12 SYS-toggle deactive">AUTO</li>
+                        <li id="SYS-BTN-TM_13" class="SYS-TXT-TM_13 SYS-toggle active">MANUAL</li>
+                    </ul>
+                </div>
+
+                <div id="SYS-BTN-GO_WORK" class="bt-working">Working<br>Mode</div>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

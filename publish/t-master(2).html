@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#00ADEF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>서진테크</title>
+
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./fonts/poppins/poppins.css" rel="stylesheet">
+    <link href="./fonts/NotoSansKr/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/jquery.modal.min.css" />
+    <link href="./css/style.css" rel="stylesheet">
+
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="./js/jquery.modal.min.js"></script>
+
+
+  </head>
+  <body>
+
+    <div id="pop"></div> <!--pop.html 인클르드 -->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+      <div class="logo">
+        <img src="../source/logo.svg" alt="">
+      </div>
+      <h2 class="title">T-master</h2>
+      <div class="ico-clock">2000-12-20  12:00 AM</div>
+      <div class="ico-version">VER 1.00</div>
+      <div class="center"></div>
+      <div class="ico-num">SerialNum : BN58736-S3000</div>
+      <div class="ico-file">File Name : 1001</div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <main>
+
+      <side>
+        <div class="box green round">
+          <ul class="greenTl">
+            <li>
+              <div class="tl">Finger</div>
+              <div class="num" id="fingerBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Rotation</div>
+              <div class="num" id="rotationBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Feeding</div>
+              <div class="num" id="feedingBtn">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Bending</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Head L/R</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Head U/D</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">Mandrel</div>
+              <div class="num">-0.01</div>
+            </li>
+            <li>
+              <div class="tl">S</div>
+              <div class="num">-0.01</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box pupple round">
+          <ul class="blueTl">
+            <li>
+              <div class="tl">Set Count</div>
+              <div class="num">3000</div>
+            </li>
+            <li>
+              <div class="tl">Work Count</div>
+              <div class="num">159</div>
+            </li>
+            <li>
+              <div class="tl">Speed</div>
+              <div class="num">50.0</div>
+            </li>
+            <li>
+              <div class="tl">Time</div>
+              <div class="num">300s</div>
+            </li>
+            <li>
+              <div class="tl">Work Line</div>
+              <div class="num">P15</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box list">
+          <ul>
+            <li>
+              <div class="tl">Input 1</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Input 2</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Input 3</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <hr>
+            <li>
+              <div class="tl">Output</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+            <li>
+              <div class="tl">Output</div>
+              <div class="num">1000 0010 0101 0000</div>
+            </li>
+          </ul>
+        </div>
+      </side>
+
+      <section>
+        <div class="box box-full-height">
+          <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <thead>
+                <tr>
+                  <th>Num</th>
+                  <th>Bending<br>Point</th>
+                  <th>Speed,<br>Time</th>
+                  <th>Loop, Break,<br>Interlock</th>
+                  <th>Feed</th>
+                  <th>Head<br>L/R</th>
+                  <th>Head<br>U/D</th>
+                  <th>Rotation</th>
+                  <th>Arm</th>
+                  <th>M</th>
+                  <th>S</th>
+                  <th>I/O</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td>0005</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0006</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0007</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0008</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0009</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0010</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0011</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0012</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0009</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0010</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0011</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0012</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0011</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0012</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0011</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>0012</td>
+                  <td>P2</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>90.00</td>
+                  <td>-42.00</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> <!-- end box --->
+
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="t-master-footer">
+        <ul class="f-left-wrap">
+          <li class="bg-red">Cancel</li>
+          <li class="bg-sky">Set</li>
+          <li>Break</li>
+          <li>InterLock</li>
+          <li>Banding<br>Point</li>
+          <li>Sub<br>Program</li>
+          <li>Insert</li>
+          <li>Delete</li>
+          <li id="secretNumBtn">Count 1</li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+</html>

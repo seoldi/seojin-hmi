@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#00ADEF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>서진테크</title>
+
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./fonts/poppins/poppins.css" rel="stylesheet">
+    <link href="./fonts/NotoSansKr/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery.modal.min.css" />
+    <link href="./css/style.css" rel="stylesheet">
+
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="./js/jquery.modal.min.js"></script>
+
+
+  </head>
+  <body>
+
+<!--    <div id="pop"></div> &lt;!&ndash;pop.html 인클르드 &ndash;&gt;-->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+      <div class="logo">
+        <img src="./source/logo.svg" alt="">
+      </div>
+      <h2 class="title">I/O Name</h2>
+      <div class="ico-clock">2000-12-20  12:00 AM</div>
+      <div class="ico-version">VER 1.00</div>
+      <div class="center"></div>
+      <div class="ico-num">SerialNum : BN58736-S3000</div>
+      <div class="ico-file">File Name : 1001</div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <main>
+      <div class="name-box">
+        <div class="full-box box">
+          <div class="name-tab">
+            <h2 class="input on">Extend input</h2>
+            <h2 class="output off">Extend output</h2>
+          </div>
+          <ul class="input">
+<!--            <li><span>1</span><p class="active">File Name</p></li>-->
+<!--            <li><span>2</span><p class="deactive">File Name</p></li>-->
+            <li><span>X00</span><p class="SYS-INPUT-IOIN00">BT_1회운전</p></li>
+            <li><span>X01</span><p class="SYS-INPUT-IOIN01">BT_연속운전</p></li>
+            <li><span>X02</span><p class="SYS-INPUT-IOIN02">BT_PAUSE</p></li>
+            <li><span>X03</span><p class="SYS-INPUT-IOIN03">BT_HOME</p></li>
+            <li><span>X04</span><p class="SYS-INPUT-IOIN04">BT_수동</p></li>
+            <li><span>X05</span><p class="SYS-INPUT-IOIN05">BT_FEED</p></li>
+            <li><span>X06</span><p class="SYS-INPUT-IOIN06">BT_M.AXIS</p></li>
+            <li><span>X07</span><p class="SYS-INPUT-IOIN07">BT_S.AXIS</p></li>
+            <li><span>X08</span><p class="SYS-INPUT-IOIN08">AIR_저압센서</p></li>
+            <li><span>X09</span><p class="SYS-INPUT-IOIN09">G1_전진센서</p></li>
+            <li><span>X0A</span><p class="SYS-INPUT-IOIN0A">G1_후진센서</p></li>
+            <li><span>X0B</span><p class="SYS-INPUT-IOIN0B">G2_전진센서</p></li>
+            <li><span>X0C</span><p class="SYS-INPUT-IOIN0C">G2_후진센서</p></li>
+            <li><span>X0D</span><p class="SYS-INPUT-IOIN0D">호퍼_전진센서</p></li>
+            <li><span>X0E</span><p class="SYS-INPUT-IOIN0E">호퍼_후진센서</p></li>
+            <li><span>X0F</span><p class="SYS-INPUT-IOIN0F">호퍼_메인센서1</p></li>
+
+            <li><span>X10</span><p class="SYS-INPUT-IOIN10">호퍼_메인센서2</p></li>
+            <li><span>X11</span><p class="SYS-INPUT-IOIN11">호퍼_스토퍼전진센서</p></li>
+            <li><span>X12</span><p class="SYS-INPUT-IOIN12">호퍼_전장센서</p></li>
+            <li><span>X13</span><p class="SYS-INPUT-IOIN13">-</p></li>
+            <li><span>X14</span><p class="SYS-INPUT-IOIN14">-</p></li>
+            <li><span>X15</span><p class="SYS-INPUT-IOIN15">-</p></li>
+            <li><span>X16</span><p class="SYS-INPUT-IOIN16">-</p></li>
+            <li><span>X17</span><p class="SYS-INPUT-IOIN17">-</p></li>
+            <li><span>X18</span><p class="SYS-INPUT-IOIN18">-</p></li>
+            <li><span>X19</span><p class="SYS-INPUT-IOIN19">-</p></li>
+            <li><span>X1A</span><p class="SYS-INPUT-IOIN1A">-</p></li>
+            <li><span>X1B</span><p class="SYS-INPUT-IOIN1B">-</p></li>
+            <li><span>X1C</span><p class="SYS-INPUT-IOIN1C">-</p></li>
+            <li><span>X1D</span><p class="SYS-INPUT-IOIN1D">-</p></li>
+            <li><span>X1E</span><p class="SYS-INPUT-IOIN1E">-</p></li>
+            <li><span>X1F</span><p class="SYS-INPUT-IOIN1F">-</p></li>
+
+            <li><span>X20</span><p class="SYS-INPUT-IOIN20">G-2층 R 볼트센서</p></li>
+            <li><span>X21</span><p class="SYS-INPUT-IOIN21">G-1층 R 볼트센서</p></li>
+            <li><span>X22</span><p class="SYS-INPUT-IOIN22">G-2층 1차제품확인센서</p></li>
+            <li><span>X23</span><p class="SYS-INPUT-IOIN23">G-투입 메인센서R</p></li>
+            <li><span>X24</span><p class="SYS-INPUT-IOIN24">G-1층 1차제품확인센서</p></li>
+            <li><span>X25</span><p class="SYS-INPUT-IOIN25">G-1층 2차제품확인센서</p></li>
+            <li><span>X26</span><p class="SYS-INPUT-IOIN26">G-전장센서</p></li>
+            <li><span>X27</span><p class="SYS-INPUT-IOIN27">G-2층 2차제품확인센서</p></li>
+            <li><span>X28</span><p class="SYS-INPUT-IOIN28">G-전장센서</p></li>
+            <li><span>X29</span><p class="SYS-INPUT-IOIN29">G-1층 L 볼트센서</p></li>
+            <li><span>X2A</span><p class="SYS-INPUT-IOIN2A">G-2층 L 볼트센서</p></li>
+            <li><span>X2B</span><p class="SYS-INPUT-IOIN2B">G-스토퍼전진센서</p></li>
+            <li><span>X2C</span><p class="SYS-INPUT-IOIN2C">비상정지</p></li>
+            <li><span>X2D</span><p class="SYS-INPUT-IOIN2D">-</p></li>
+            <li><span>X2E</span><p class="SYS-INPUT-IOIN2E">-</p></li>
+            <li><span>X2F</span><p class="SYS-INPUT-IOIN2F">-</p></li>
+
+            <li><span>X30</span><p class="SYS-INPUT-IOIN30">File Name</p></li>
+            <li><span>X31</span><p class="SYS-INPUT-IOIN31">File Name</p></li>
+            <li><span>X32</span><p class="SYS-INPUT-IOIN32">File Name</p></li>
+            <li><span>X33</span><p class="SYS-INPUT-IOIN33">File Name</p></li>
+            <li><span>X34</span><p class="SYS-INPUT-IOIN34">File Name</p></li>
+            <li><span>X35</span><p class="SYS-INPUT-IOIN35">File Name</p></li>
+            <li><span>X36</span><p class="SYS-INPUT-IOIN36">File Name</p></li>
+            <li><span>X37</span><p class="SYS-INPUT-IOIN37">File Name</p></li>
+            <li><span>X38</span><p class="SYS-INPUT-IOIN38">File Name</p></li>
+            <li><span>X39</span><p class="SYS-INPUT-IOIN39">File Name</p></li>
+            <li><span>X3A</span><p class="SYS-INPUT-IOIN3A">File Name</p></li>
+            <li><span>X3B</span><p class="SYS-INPUT-IOIN3B">File Name</p></li>
+            <li><span>X3C</span><p class="SYS-INPUT-IOIN3C">File Name</p></li>
+            <li><span>X3D</span><p class="SYS-INPUT-IOIN3D">File Name</p></li>
+            <li><span>X3E</span><p class="SYS-INPUT-IOIN3E">File Name</p></li>
+            <li><span>X3F</span><p class="SYS-INPUT-IOIN3F">File Name</p></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="f-left-wrap">
+        <ul class="left-li">
+          <li>새로열기</li>
+          <li>열기</li>
+          <li>저장</li>
+          <li>다른저장</li>
+          <li>-</li>
+          <li>Data</li>
+          <li>Tool</li>
+          <li class="long">I/O<br>Name</li>
+          <li>파라메타</li>
+          <li id="fileSaveBtn">파일</li>
+          <li>비우기</li>
+          <li>뒤로</li>
+          <li>취소</li>
+          <li>확인</li>
+          <li>XYZ</li>
+          <li class="long">이더켓<br>파라메타</li>
+          <li>밴딩위치</li>
+          <li>-</li>
+          <li>이전</li>
+          <li>원점</li>
+        </ul>
+      </div>
+
+      <div class="f-right-wrap">
+        <ul>
+          <li>핸들동작</li>
+          <li>스텝</li>
+          <li>한계동작</li>
+          <li>연속동작</li>
+          <li>정지</li>
+          <li>원점</li>
+          <li>동시회전</li>
+          <li>-</li>
+          <li>상태</li>
+          <li>-</li>
+          <li>작업취소</li>
+          <li>수동동작</li>
+        </ul>
+      </div>
+
+      <div class="bt-working">Working<br>Mode</div>
+    </footer>
+
+  </body>
+</html>

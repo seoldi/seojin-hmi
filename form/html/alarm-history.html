@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--    <meta name="viewport" content="width=device-width, shrink-to-fit=no, maximum-scale=0.87">-->
+<!--    <meta name="viewport" content="width=device-width, shrink-to-fit=no, maximum-scale=0.79">-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#00ADEF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>서진테크</title>
+
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../fonts/poppins/poppins.css" rel="stylesheet">
+    <link href="../fonts/NotoSansKr/fonts.css" rel="stylesheet">
+    <link href="../fonts/Antonio/style.css" rel="stylesheet">
+    <link href="../css/jquery.modal.min.css"  rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- 필수 시작-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/jquery.jscssfile.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="../../js/jquery.modal.min.js"></script>
+    <!-- 영수 jQuery js -->
+    <script src="../marujs/WebApp.func.js"></script>
+    <script src="../marujs/WebApp.js"></script>
+    <!-- 필수 종료-->
+
+    <!-- 홈페이지별 js 시작 -->
+    <script src="../marujs/MaruScript.js"></script>
+    <script src="../marujs/WebApp.site.js"></script>
+    <!--    <script src="../layout/layout.js"></script>-->
+    <!-- 홈페이지별 js 종료 -->
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/script.js"></script>
+    <!--    <script src="../../js/jquery.easy-pie-chart.js"></script>-->
+    <script src="../../js/jquery.easy-pie-chart.min.js"></script>
+
+</head>
+
+<body>
+<div data-role="page" id="page-main" data-page="main" class="wrap SYS-context" style="">
+<!--    <div id="mydlg"></div> &lt;!&ndash;pop.html 인클르드 &ndash;&gt;-->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+        <div class="logo">
+            <img src="../source/logo.svg" alt=""><span id="SYS-BTN-LOGO"></span>
+        </div>
+        <h2 class="title">Alarm-history</h2>
+        <div class="SYS-TXT-MA_TIMER ico-clock">2023-04-12 10:41 AM</div>
+        <div class="ico-version">VER 1.00</div>
+        <div class="center"></div>
+        <div class="ico-num"><span>Part Name : </span> <span class="SYS-TXT-MA_SERIAL">X-1420711-1</span></div>
+        <div class="ico-file"><span>Serial Num : </span> <span class="SYS-TXT-MA_FNUMBER">S0008</span></div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <div data-role="body" id="main-body" class="SYS-context">
+        <div data-role="content" id="main_one" data-loc="main">
+            <main>
+                <!-- 2023-04-12 side 영역 삭제 -->
+                <section class="alarm"> <!--2023-04-12 .alarm 추가-->
+                    <div class="box box-full-height">
+                        <div class="tbl-header">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                <tr>
+                                    <th>발생</th>
+                                    <th>메시지</th>
+                                    <th>복구</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="SYS-BLOCK-TABLE" class="tbl-content">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                                <tr style="background-color:black">
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                    <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                                </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            <tr style="background-color:black">
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_0" id="TD-00_0" data-value="1">05:24:53</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_1" id="TD-00_1" data-value="">2차 포밍 소재 확인 이상</td>
+                                <td class="SYS-BTN-CELL SYS-toggle deactive SYS-TXT-00_2" id="TD-00_2" data-value="">05:28:53</td>
+                            </tr>
+                            </table>
+                        </div>
+                    </div> <!-- end box --->
+
+                </section>
+
+            </main>
+
+            <footer class="bigBt">
+                <div class="f-left-wrap type2">
+                    <ul class="left-li">
+                        <li id="SYS-BTN-MASEL_0" class="SYS-TXT-MASEL_0 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_1" class="SYS-TXT-MASEL_1 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_2" class="SYS-TXT-MASEL_2 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_3" class="SYS-TXT-MASEL_3 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_4" class="SYS-TXT-MASEL_4 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_5" class="SYS-TXT-MASEL_5 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_6" class="SYS-TXT-MASEL_6 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_7" class="SYS-TXT-MASEL_7 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_8" class="SYS-TXT-MASEL_8 SYS-toggle deactive">정보해제</li>
+                        <li id="SYS-BTN-MASEL_10" class="SYS-TXT-MASEL_10 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_11" class="SYS-TXT-MASEL_11 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_12" class="SYS-TXT-MASEL_12 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_13" class="SYS-TXT-MASEL_13 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_14" class="SYS-TXT-MASEL_14 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_15" class="SYS-TXT-MASEL_15 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_16" class="SYS-TXT-MASEL_16 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_17" class="SYS-TXT-MASEL_17 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-MASEL_18" class="SYS-TXT-MASEL_18">-</li>
+                    </ul>
+                </div>
+
+                <div class="f-right-wrap type2">
+                    <ul>
+                        <li id="SYS-BTN-TM_0" class="SYS-TXT-TM_0 GROUP-MAXIS_1 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_1" class="SYS-TXT-TM_1 GROUP-MAXIS_2 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_2" class="SYS-TXT-TM_2 GROUP-MAXIS_3 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_3" class="SYS-TXT-TM_3 GROUP-MAXIS_4 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_4" class="SYS-TXT-TM_4 GROUP-MAXIS_5 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_5" class="SYS-TXT-TM_5 GROUP-MAXIS_6 SYS-toggle deactive">UP</li>
+                        <li id="SYS-BTN-TM_6" class="SYS-TXT-TM_6 GROUP-MAXIS_7 SYS-toggle deactive">PAGE<br>UP</li>
+                        <li id="SYS-BTN-TM_7" class="SYS-TXT-TM_7 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_8" class="SYS-TXT-TM_8 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_9" class="SYS-TXT-TM_9 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_10" class="SYS-TXT-TM_10 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_11" class="SYS-TXT-TM_11 SYS-toggle deactive">-</li>
+                        <li id="SYS-BTN-TM_12" class="SYS-TXT-TM_12 SYS-toggle deactive">DOWN</li>
+                        <li id="SYS-BTN-TM_13" class="SYS-TXT-TM_13 SYS-toggle deactive">PAGE<br>DOWN</li>
+                    </ul>
+                </div>
+
+                <div id="SYS-BTN-GO_WORK" class="bt-working kr">관리자<br>모드</div>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

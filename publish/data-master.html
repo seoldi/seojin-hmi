@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="theme-color" content="#00ADEF" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>서진테크</title>
+
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../fonts/poppins/poppins.css" rel="stylesheet" />
+    <link href="../fonts/NotoSansKr/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/jquery.modal.min.css" />
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!-- jQuery Modal -->
+    <script src="../js/jquery.modal.min.js"></script>
+  </head>
+  <body>
+    <!--    <div id="pop"></div> &lt;!&ndash;pop.html 인클르드 &ndash;&gt;-->
+
+    <!--start 상단 서브 타이틀 -->
+    <header>
+      <div class="logo">
+        <img src="./source/logo.svg" alt="" />
+      </div>
+      <h2 class="title">Data-MASTER</h2>
+      <div class="ico-clock">2000-12-20 12:00 AM</div>
+      <div class="ico-version">VER 1.00</div>
+      <div class="center"></div>
+      <div class="ico-num">SerialNum : BN58736-S3000</div>
+      <div class="ico-file">File Name : 1001</div>
+    </header>
+    <!--End 상단 서브 타이틀 -->
+
+    <main>
+      <div class="data width-box box">
+        <div class="left-box">
+          <div class="cad-box box">
+            <img src="./source/cad.png" />
+          </div>
+          <div class="home-box box">
+            <h3>Home position</h3>
+            <div class="home-item">
+              <ul>
+                <li>
+                  <h4>Feeding</h4>
+                  <p>90</p>
+                </li>
+                <li>
+                  <h4>Main Axis</h4>
+                  <p>XX</p>
+                </li>
+                <li>
+                  <h4>Head-L/R</h4>
+                  <p>XX</p>
+                </li>
+                <li>
+                  <h4>Sub Axis</h4>
+                  <p>XX</p>
+                </li>
+                <li>
+                  <h4>Head-U/D</h4>
+                  <p>90</p>
+                </li>
+              </ul>
+              <div class="bt-set">Set</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-box">
+          <div class="data-list">
+            <ul>
+              <li>
+                <h4 class="tl eng">Main Speed</h4>
+                <p class="input">90</p>
+                <span class="unit">%</span>
+              </li>
+              <li>
+                <h4 class="tl kr">위치 결정 사용</h4>
+                <div class="switch-wrap deactive">
+                  <span class="off">OFF</span>
+                  <div class="toggle"></div>
+                  <span class="on">ON</span>
+                </div>
+              </li>
+              <li>
+                <h4 class="tl kr">위치 결정 허용값</h4>
+                <p class="input">XX</p>
+                <span class="unit">mm</span>
+              </li>
+              <li>
+                <h4 class="tl eng">Out delay</h4>
+                <p class="input">90</p>
+                <span class="unit">ms</span>
+              </li>
+              <li>
+                <h4 class="tl eng">Mandrel 2</h4>
+                <div class="switch-wrap active">
+                  <span class="off">OFF</span>
+                  <div class="toggle"></div>
+                  <span class="on">ON</span>
+                </div>
+              </li>
+              <li>
+                <h4 class="tl eng">Counter</h4>
+                <p class="input">XX</p>
+              </li>
+            </ul>
+            <div class="data-info">
+              <p>센서하한값 : 센서감지능력 최소 (조작금지)</p>
+              <p>센서감지능력 최대 (조작금지)</p>
+            </div>
+          </div>
+
+          <div class="key-wrap data-key">
+            <h3 class="total">125</h3>
+            <ul class="keypad-list">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>C</li>
+              <li>0</li>
+              <li><img src="./source/key-del.svg" /></li>
+              <li class="bt-reset">데이터 초기화</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="f-left-wrap">
+        <ul class="left-li">
+          <li>새로열기</li>
+          <li>열기</li>
+          <li>저장</li>
+          <li>다른저장</li>
+          <li>-</li>
+          <li>Data</li>
+          <li>Tool</li>
+          <li class="long">I/O<br />Name</li>
+          <li>파라메타</li>
+          <li>파일</li>
+          <li>비우기</li>
+          <li>뒤로</li>
+          <li>취소</li>
+          <li>확인</li>
+          <li>XYZ</li>
+          <li class="long">이더켓<br />파라메타</li>
+          <li>밴딩위치</li>
+          <li>-</li>
+          <li>이전</li>
+          <li>원점</li>
+        </ul>
+      </div>
+
+      <div class="f-right-wrap">
+        <ul>
+          <li>핸들동작</li>
+          <li>스텝</li>
+          <li>한계동작</li>
+          <li>연속동작</li>
+          <li>정지</li>
+          <li>원점</li>
+          <li>동시회전</li>
+          <li>-</li>
+          <li>상태</li>
+          <li>-</li>
+          <li>작업취소</li>
+          <li>수동동작</li>
+        </ul>
+      </div>
+
+      <div class="bt-working">Working<br />Mode</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seojin Tech CNC HMI</title>
+<style>
+  :root { --bg:#1a1f27; --card:#242b35; --accent:#3974CC; --text:#e0e6ef; --muted:#7a8899; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Pretendard","Malgun Gothic",sans-serif; background:var(--bg); color:var(--text);
+         display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; }
+  .card { max-width:540px; width:100%; background:var(--card); border-radius:20px; padding:40px 36px;
+          box-shadow:0 12px 40px rgba(0,0,0,.4); }
+  h1 { margin:0 0 6px; font-size:1.5rem; letter-spacing:.02em; }
+  .sub { margin:0 0 24px; color:var(--muted); font-size:.9rem; line-height:1.6; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+  .tag { background:#2c3545; color:var(--accent); font-size:.78rem; padding:5px 12px; border-radius:999px; font-weight:600; }
+  .links { display:flex; flex-direction:column; gap:12px; }
+  a.btn { display:block; text-align:center; padding:15px; border-radius:12px; text-decoration:none; font-weight:700;
+          transition:transform .15s ease; font-size:.95rem; }
+  a.btn:hover { transform:translateY(-2px); }
+  .primary { background:var(--accent); color:#fff; }
+  .secondary { background:#2c3545; color:var(--text); }
+  footer { margin-top:24px; font-size:.78rem; color:var(--muted); text-align:center; }
+  footer a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>⚙️ Seojin Tech CNC HMI</h1>
+    <p class="sub">CNC 3D 파이프 벤딩 머신 Android WebView HMI UI 프로토타입입니다.<br>
+      실제 산업 장비에 탑재된 화면을 HTML/CSS/JS로 퍼블리싱했습니다.</p>
+    <div class="tags">
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Android WebView</span>
+      <span class="tag">HMI</span>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="demo.html" target="_blank" rel="noopener">▶ 메인 화면 데모</a>
+      <a class="btn secondary" href="demo.html?src=master" target="_blank" rel="noopener">⚙️ 마스터 설정 화면</a>
+    </div>
+    <footer>Design &amp; Front-end by <a href="https://github.com/seoldi">seoldi</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seojin Tech CNC HMI — Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111519;
+    display: flex; align-items: center; justify-content: center;
+    height: 100vh; overflow: hidden;
+  }
+  .hmi-wrap {
+    overflow: hidden; border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .hmi-wrap iframe {
+    display: block; width: 1920px; height: 1080px;
+    border: none; transform-origin: top left;
+    background: #1D2329;
+  }
+  .back-btn {
+    position: fixed; top: 16px; left: 16px;
+    background: rgba(36,43,53,.9); backdrop-filter: blur(8px);
+    border: none; border-radius: 999px; padding: 8px 18px;
+    font-size: .84rem; font-family: "Pretendard","Malgun Gothic",sans-serif;
+    color: #e0e6ef; cursor: pointer; text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.4); transition: background .15s;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  .back-btn:hover { background: rgba(57,116,204,.7); }
+</style>
+</head>
+<body>
+<a class="back-btn" href="index.html">← 목록으로</a>
+<div class="hmi-wrap" id="hmiWrap">
+  <iframe src="publish/main.html" id="hmiFrame"></iframe>
+</div>
+<script>
+(function () {
+  var W = 1920, H = 1080;
+  var wrap  = document.getElementById('hmiWrap');
+  var frame = document.getElementById('hmiFrame');
+  var params = new URLSearchParams(location.search);
+  if (params.get('src')) {
+    frame.src = 'publish/' + params.get('src') + '.html';
+  }
+  function fit() {
+    var pad = 24;
+    var scale = Math.min(
+      (window.innerWidth  - pad) / W,
+      (window.innerHeight - pad) / H
+    );
+    frame.style.transform = 'scale(' + scale + ')';
+    wrap.style.width  = Math.round(W * scale) + 'px';
+    wrap.style.height = Math.round(H * scale) + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>
