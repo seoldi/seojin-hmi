@@ -38,6 +38,12 @@
       mix-blend-mode: overlay;
     }
 
+    /* ── Embed mode (?embed=1): 다른 사이트의 모달/iframe 안에서 쓸 때 — 헤더·가이드 없이 첫 화면부터 ── */
+    .embed header,
+    .embed .guide-overlay {
+      display: none !important;
+    }
+
     /* ── Header ── */
     header {
       flex-shrink: 0;
@@ -480,14 +486,16 @@
 
     var W = 1920, H = 1080;
     var BEZEL_W = 32, BEZEL_H = 56;
-    var HEADER_H = 52;
+    var EMBED = location.search.indexOf('embed=1') > -1;
+    if (EMBED) document.documentElement.classList.add('embed');
+    var HEADER_H = EMBED ? 0 : 52;
     var THUMB_H = 48;
 
     var frame = document.getElementById('pageFrame');
     var wrap = document.getElementById('pageWrap');
     var thumbNav = document.getElementById('thumbNav');
 
-    var curIdx = parseInt(localStorage.getItem('sjhScreen') || '0');
+    var curIdx = EMBED ? 0 : parseInt(localStorage.getItem('sjhScreen') || '0');
     if (curIdx < 0 || curIdx >= SCREENS.length) curIdx = 0;
 
     // Build thumbnails
@@ -519,7 +527,7 @@
         });
       }
       frame.src = 'publish/html/' + s.file;
-      localStorage.setItem('sjhScreen', idx);
+      if (!EMBED) localStorage.setItem('sjhScreen', idx);
       updateThumbActive();
     }
 
@@ -545,7 +553,7 @@
 
     // Guide popup
     var guideOverlay = document.getElementById('guideOverlay');
-    var guideVisible = !localStorage.getItem('sjhGuideShown');
+    var guideVisible = !EMBED && !localStorage.getItem('sjhGuideShown');
     if (guideVisible) guideOverlay.style.display = 'flex';
 
     function closeGuide() {
@@ -558,6 +566,10 @@
     document.addEventListener('keydown', function (e) {
       if (guideVisible) {
         if (e.key === 'Escape') closeGuide();
+        return;
+      }
+      if (EMBED && e.key === 'Escape') {
+        try { parent.postMessage({ sjhDemo: 'close' }, '*'); } catch (ignore) {}
         return;
       }
       if (e.key === 'ArrowLeft') goTo(curIdx - 1);
